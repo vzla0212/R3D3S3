@@ -1,5 +1,5 @@
 package servidorlocal;
-
+//Comentario intencional
 
 import java.io.IOException;
 import java.net.ServerSocket;
