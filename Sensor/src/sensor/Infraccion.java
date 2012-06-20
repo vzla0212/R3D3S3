@@ -47,6 +47,11 @@ public class Infraccion {
         return fecha + "-" + ubicacion + "-" + velocidad;
     }
 
+    /**
+     * Crea el mensaje del protocolo necesario para reportar una infraccion
+     * @param out - Canal de datos al servidor
+     * @param sensor - sensor que reporta la infraccion
+     */
     public void reportar(PrintWriter out, Sensor sensor) {
         out.println("SENSOR");
         out.println(sensor);

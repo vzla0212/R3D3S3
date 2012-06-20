@@ -30,7 +30,7 @@ public class Sensor {
      * @return - velocidad del automovil
      */
     private int recibirSeñal() {
-        long tiempo = Math.round(Math.random()*100 + 1);
+        long tiempo = Math.round(Math.random()*1000 + 1);
 
         try { Thread.sleep(tiempo); }
         catch (Exception e) {}
