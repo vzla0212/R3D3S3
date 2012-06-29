@@ -30,7 +30,7 @@ public class Sensor {
      * @return - velocidad del automovil
      */
     private int recibirSeñal() {
-        long tiempo = Math.round(Math.random()*1000 + 1);
+        long tiempo = Math.round(Math.random()*10000 + 1);
 
         try { Thread.sleep(tiempo); }
         catch (Exception e) {}
@@ -43,7 +43,9 @@ public class Sensor {
      * @return - imagen del infractor
      */
     private String generarImagen() {
-        return "Holaaaa";
+        int num = (int)Math.round(Math.random()*169);
+        String nombre = "imagenes/img_" + num + ".jpg";
+        return nombre;
     }
 
     /**

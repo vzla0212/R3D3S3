@@ -44,7 +44,7 @@ public class Infraccion {
 
     @Override
     public String toString() {
-        return fecha + "-" + ubicacion + "-" + velocidad;
+        return fecha + "\n" + ubicacion + "\n" + velocidad;
     }
 
     /**

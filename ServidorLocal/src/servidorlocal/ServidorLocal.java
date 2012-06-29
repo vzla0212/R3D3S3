@@ -48,6 +48,14 @@ public class ServidorLocal {
         this.puertoServidor = puertoServidor;
     }
 
+    public int getPuertoServidor() {
+        return puertoServidor;
+    }
+
+    public String getServidor() {
+        return servidor;
+    }
+
     @Override
     public String toString() {
         return "Servidor local \"" + ubicacion + "\" en puerto " + puertoLocal;
