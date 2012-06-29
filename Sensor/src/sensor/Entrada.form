@@ -43,7 +43,7 @@
                   </Group>
                   <Group type="102" attributes="0">
                       <EmptySpace min="22" pref="22" max="22" attributes="0"/>
-                      <Component id="jPanel2" min="-2" max="-2" attributes="1"/>
+                      <Component id="jPanel2" min="-2" pref="475" max="-2" attributes="1"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <EmptySpace min="212" pref="212" max="212" attributes="0"/>
@@ -143,6 +143,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="JUbicacion">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Plaza Venezuela"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
@@ -150,6 +153,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="JVelocidad">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="60"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
@@ -218,6 +224,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="JServidor">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="localhost"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel7">
           <Properties>
@@ -225,6 +234,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="JPuerto">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="1234"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>

@@ -10,7 +10,7 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
-    <Property name="title" type="java.lang.String" value="Sensor de velocidad"/>
+    <Property name="title" type="java.lang.String" value="Servidor local"/>
     <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
@@ -140,6 +140,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="JUbicacion">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Caracas"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
@@ -147,6 +150,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="JPuertoLocal">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="1234"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>
@@ -208,6 +214,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="JServidor">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="localhost"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel7">
           <Properties>
@@ -215,6 +224,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="JPuerto">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="4445"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>

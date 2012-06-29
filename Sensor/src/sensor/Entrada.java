@@ -59,7 +59,11 @@ public class Entrada extends JFrame {
 
         jLabel2.setText("Ubicacion:");
 
+        JUbicacion.setText("Plaza Venezuela");
+
         jLabel3.setText("Velocidad Maxima Permitida:");
+
+        JVelocidad.setText("60");
 
         jLabel5.setText("Kph");
 
@@ -105,7 +109,11 @@ public class Entrada extends JFrame {
 
         jLabel6.setText("Servidor Local:");
 
+        JServidor.setText("localhost");
+
         jLabel7.setText("Puerto:");
+
+        JPuerto.setText("1234");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -162,7 +170,7 @@ public class Entrada extends JFrame {
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 475, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(22, 22, 22)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 475, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(212, 212, 212)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))

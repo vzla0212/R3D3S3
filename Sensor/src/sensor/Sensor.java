@@ -1,8 +1,5 @@
 package sensor;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.Date;
 
@@ -30,7 +27,7 @@ public class Sensor {
      * @return - velocidad del automovil
      */
     private int recibirSeñal() {
-        long tiempo = Math.round(Math.random()*10000 + 1);
+        long tiempo = Math.round(Math.random()*10000 + 1000);
 
         try { Thread.sleep(tiempo); }
         catch (Exception e) {}
@@ -57,11 +54,7 @@ public class Sensor {
         Socket server = new Socket(servidor, puerto);
 
         // Creando canal de conexion de entrada salida con el servidor
-        InputStreamReader isr = new InputStreamReader(server.getInputStream());
-        BufferedReader in = new BufferedReader(isr);
-        PrintWriter out = new PrintWriter(server.getOutputStream(), true);
-
-        infraccion.reportar(out, this);
+        infraccion.reportar(server.getOutputStream(), this);
 
     }
 

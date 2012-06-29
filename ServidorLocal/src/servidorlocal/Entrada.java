@@ -50,7 +50,7 @@ public class Entrada extends JFrame {
         jLabel4.setText("jLabel4");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Sensor de velocidad");
+        setTitle("Servidor local");
         setResizable(false);
 
         jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 18));
@@ -60,7 +60,11 @@ public class Entrada extends JFrame {
 
         jLabel2.setText("Ubicacion:");
 
+        JUbicacion.setText("Caracas");
+
         jLabel3.setText("Puerto Local:");
+
+        JPuertoLocal.setText("1234");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -101,7 +105,11 @@ public class Entrada extends JFrame {
 
         jLabel6.setText("Servidor Central:");
 
+        JServidor.setText("localhost");
+
         jLabel7.setText("Puerto:");
+
+        JPuerto.setText("4445");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);

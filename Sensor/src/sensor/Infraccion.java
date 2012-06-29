@@ -1,6 +1,12 @@
 package sensor;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.OutputStream;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Infraccion {
@@ -44,7 +50,8 @@ public class Infraccion {
 
     @Override
     public String toString() {
-        return fecha + "\n" + ubicacion + "\n" + velocidad;
+        SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy HH:mm");
+        return format.format(fecha) + "\n" + ubicacion + "\n" + velocidad;
     }
 
     /**
@@ -52,11 +59,31 @@ public class Infraccion {
      * @param out - Canal de datos al servidor
      * @param sensor - sensor que reporta la infraccion
      */
-    public void reportar(PrintWriter out, Sensor sensor) {
-        out.println("SENSOR");
-        out.println(sensor);
-        out.println("INFRACCION");
-        out.println(this);
+    public void reportar(OutputStream out, Sensor sensor)
+            throws Exception {
+
+        byte[] byteArray;
+        int in;
+
+        PrintWriter pw = new PrintWriter(out, true);
+        BufferedOutputStream bs = new BufferedOutputStream(out);
+        BufferedInputStream archivo;
+
+        pw.println("SENSOR");
+        pw.println(sensor);
+        pw.println("INFRACCION");
+        pw.println(this);
+        pw.println("IMAGEN");
+
+        byteArray = new byte[8192];
+        archivo = new BufferedInputStream(new FileInputStream(imagen));
+
+        while((in = archivo.read(byteArray)) != -1)
+            out.write(byteArray, 0, in);
+
+        archivo.close();
+        bs.close();
+        pw.close();
     }
 
 }
