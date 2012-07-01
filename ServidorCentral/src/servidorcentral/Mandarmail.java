@@ -1,16 +1,7 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package servidorcentral;
 
-/**
- *
- * @author ali
- */
 import java.util.Properties;
 import javax.mail.Message;
-import javax.mail.MessagingException;
 import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
@@ -18,37 +9,43 @@ import javax.mail.internet.MimeMessage;
 
 public class Mandarmail {
 
-    public static void postMail(String recipients[], String subject, String message, String from) throws MessagingException {
-        boolean debug = false;
+    public static void postMail(String recipient, String subject,
+            String message, String from) {
+        try
+        {
+            // Propiedades de la conexión
+            Properties props = new Properties();
+            props.setProperty("mail.smtp.host", "smtp.gmail.com");
+            props.setProperty("mail.smtp.starttls.enable", "true");
+            props.setProperty("mail.smtp.port", "587");
+            props.setProperty("mail.smtp.user", "vzlatransito@gmail.com");
+            props.setProperty("mail.smtp.auth", "true");
 
-        //Set the host smtp address
-        Properties props = new Properties();
-        props.put("mail.cantv.net", "mail.cantv.net");
+            // Preparamos la sesion
+            Session session = Session.getDefaultInstance(props);
 
-        // create some properties and get the default Session
-        Session session = Session.getDefaultInstance(props, null);
-        session.setDebug(debug);
+            // Construimos el mensaje
+            MimeMessage mime = new MimeMessage(session);
+            mime.setFrom(new InternetAddress(from));
 
-        // create a message
-        Message msg = new MimeMessage(session);
+            mime.addRecipient(
+                Message.RecipientType.TO,
+                new InternetAddress(recipient));
 
-        // set the from and to address
-        InternetAddress addressFrom = new InternetAddress(from);
-        msg.setFrom(addressFrom);
+            mime.setSubject(subject);
+            mime.setText(message);
 
-        InternetAddress[] addressTo = new InternetAddress[recipients.length];
-        for (int i = 0; i < recipients.length; i++) {
-            addressTo[i] = new InternetAddress("tefajung@gmail.com");
+            // Lo enviamos.
+            Transport t = session.getTransport("smtp");
+            t.connect("vzlatransito@gmail.com", "3papasalvapor");
+            t.sendMessage(mime, mime.getAllRecipients());
+
+            // Cierre.
+            t.close();
         }
-        msg.setRecipients(Message.RecipientType.TO, addressTo);
-
-
-        // Optional : You can also set your custom headers in the Email if you Want
-        msg.addHeader("MyHeaderName", "myHeaderValue");
-
-        // Setting the Subject and Content Type
-        msg.setSubject(subject);
-        msg.setContent(message, "text/plain");
-        Transport.send(msg);
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
     }
 }

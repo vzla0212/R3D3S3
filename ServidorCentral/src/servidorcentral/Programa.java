@@ -44,9 +44,9 @@ public class Programa {
             tabla.next();
 
             //System.out.println(tabla.getString(1)+"\t"+tabla.getString(2));
-            String[] aux = new String[1];
-            aux[0] = tabla.getString(2);
-            Mandarmail.postMail(aux, "PruebaMulta", "Cuidadano " + tabla.getString(1) + " su carro de placas " + datos[0] + " detectado en " + datos[1] + "a una velocidad de " + datos[3] + " en fecha y hora " + datos[2], "pruebatransito@vzla0212.com");
+            //aux[0] = tabla.getString(2);
+            String aux = tabla.getString(2);
+            Mandarmail.postMail(aux, "PruebaMulta", "Cuidadano " + tabla.getString(1) + " su carro de placas " + datos[0] + " detectado en " + datos[1] + "a una velocidad de " + datos[3] + " en fecha y hora " + datos[2], "vzlatransito@gmail.com");
             System.out.println("Mensaje enviado");
         } catch (ClassNotFoundException | SQLException e) {
             System.out.print(e);
