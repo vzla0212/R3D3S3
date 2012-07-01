@@ -55,6 +55,7 @@ public class Sensor {
 
         // Creando canal de conexion de entrada salida con el servidor
         infraccion.reportar(server.getOutputStream(), this);
+        server.close();
 
     }
 

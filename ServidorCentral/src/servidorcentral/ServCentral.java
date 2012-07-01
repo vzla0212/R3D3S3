@@ -4,10 +4,7 @@
  */
 package servidorcentral;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.sql.SQLException;
@@ -31,37 +28,13 @@ public class ServCentral {
         }
 
         Socket clientSocket = null;
-        try{
+
+        while(true) {
             clientSocket = serverSocket.accept();
-        } catch (IOException e) {
-            System.err.println("Accept failed.");
-            System.exit(1);
+            Manejador manejador = new Manejador(clientSocket);
+            manejador.start();
+
         }
 
-        PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
-        BufferedReader in = new BufferedReader(
-                new InputStreamReader(
-                clientSocket.getInputStream()));
-        String inputLine, outputLine;
-
-        out.println("Servidor Central Arriba");
-
-        String[] aux= new String[4];
-        int i=0;
-        while ((inputLine=in.readLine()) != null){
-            aux[i] = inputLine;
-            i++;
-            if(i==4){
-                i=0;
-                Programa.ReportarIncidente(aux);
-                Programa.EnviarMail(aux);
-                System.out.println(aux[0]+aux[1]+aux[2]+aux[3]);
-
-            }
-        }
-        out.close();
-        in.close();
-        clientSocket.close();
-        serverSocket.close();
     }
 }

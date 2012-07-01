@@ -2,7 +2,6 @@ package sensor;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
@@ -50,7 +49,7 @@ public class Infraccion {
 
     @Override
     public String toString() {
-        SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy HH:mm");
+        SimpleDateFormat format = new SimpleDateFormat("dd-MM-yy HH:mm");
         return format.format(fecha) + "\n" + ubicacion + "\n" + velocidad;
     }
 

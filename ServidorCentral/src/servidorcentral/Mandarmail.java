@@ -38,7 +38,7 @@ public class Mandarmail {
 
         InternetAddress[] addressTo = new InternetAddress[recipients.length];
         for (int i = 0; i < recipients.length; i++) {
-            addressTo[i] = new InternetAddress(recipients[i]);
+            addressTo[i] = new InternetAddress("tefajung@gmail.com");
         }
         msg.setRecipients(Message.RecipientType.TO, addressTo);
 

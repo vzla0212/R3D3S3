@@ -66,6 +66,7 @@ public class Manejador extends Thread {
             bs.close();
             archivo.close();
             in.close();
+            cliente.close();
 
             // Creando reporte
             reporte = new Reporte(sensor, fecha, ubicacion, velocidad);
